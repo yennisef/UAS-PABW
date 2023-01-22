@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Halaman ReadJson
+{% endblock %}
+
+{% block content %}
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Name</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in rows %}
+				<tr>
+					<th scope="row">{{row.Id}}</th>
+					<td>{{row.Name}}</td>
+					<td>{{row.Price}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

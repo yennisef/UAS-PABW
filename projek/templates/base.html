@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+	.nav-item .nav-link{
+		font-family: 'Roboto Mono', monospace !important;
+				color: blue !important;
+	}
+	</style>
+	<title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+	<main>
+		<div class="bg-dark">
+			<nav class="navbar navbar-dark container">
+				<div class="">
+					<a class="navbar-brand" href="#" style="font-family: 'Times New Roman', monospace;">PIRAMIDA</a>
+				</div>
+				<ul class="Times New Roman justify-content-end">
+					<li class="Times New Roman">
+						<a href="/" class="Times New Roman-link text-blue">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'mobils:index' %}" class="Times New Roman-link text-blue">Jenis Mobil</a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'readcsv:index' %}" class="Times New Roman-link text-blue">JenisMobil.CSV</a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'readxml:index' %}" class="Times New Roman-link text-blue">JenisMobil.XML</a>
+					</li>
+					<li class="nav-item">
+						<a href="{% url 'readjson:index' %}" class="Times New Roman-link text-blue">JenisMobil.JSON</a>
+					</li>					
+				</ul>
+			</nav>
+		</div>
+		{% block content %}
+
+		{% endblock %}
+
+	</main>
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

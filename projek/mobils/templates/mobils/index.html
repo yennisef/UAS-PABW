@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Halaman Mobil
+{% endblock %}
+
+{% block content %}
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Brand</th>
+				<th scope="col">Model</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for mobil in mobils %}
+				<tr>
+					<th scope="row">{{mobil.id}}</th>
+					<td>{{mobil.brand}}</td>
+					<td>{{mobil.model}}</td>
+					<td>{{mobil.price}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
